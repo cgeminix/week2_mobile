@@ -140,7 +140,7 @@ console.log("text2 được in hoa chữ cái đầu: "+capitalizedText);*/
 
 
 //33. Calculate the sum of numbers received in a comma delimited string
-function sumFromCommaDelimitedString(str) {
+/*function sumFromCommaDelimitedString(str) {
     return str
         .split(',')     // Tách chuỗi thành mảng các phần tử dựa trên dấu phẩy
         .map(Number)    // Chuyển đổi từng phần tử thành số
@@ -165,5 +165,26 @@ const text = "Huỳnh Hồ Nhựt Hào";
 const words = getWords(text);
 console.log(`Coding Challenge 34:`)
 console.log("Văn bản: " + text)
-console.log("Từ trong văn bản: " + words); 
+console.log("Từ trong văn bản: " + words); */
 
+
+//35. Create a function to convert a CSV text to a “bi-dimensional” array
+function csvToArray(csvText) {
+    // Tách từng dòng của CSV bằng dấu xuống dòng '\n'
+    return csvText.trim().split('\n').map(row => {
+        // Tách từng hàng thành mảng các giá trị bằng dấu phẩy ','
+        return row.split(',');
+    });
+}
+
+// Ví dụ sử dụng:
+const csvText = `Name,Age,City
+Hào,22,HCM
+Tình,40,HN
+Duy,50,BT`;
+
+const array = csvToArray(csvText);
+console.log(array);
+array.forEach(row => {
+    console.log(row);
+});
