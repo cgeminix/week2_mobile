@@ -110,7 +110,7 @@ console.log(`Kết quả cộng: ${sum}`);*/
 
 
 //31. Create a function that will return the number of words in a text
-function countWords(text) {
+/*function countWords(text) {
     // Loại bỏ khoảng trắng ở đầu và cuối, sau đó tách từ bằng khoảng trắng
     const words = text.trim().split(/\s+/);
     // Trả về số lượng từ
@@ -136,4 +136,34 @@ function capitalizeFirstLetter(text) {
 // Ví dụ sử dụng:
 const text2 = "huỳnh hồ nhựt hào";
 const capitalizedText = capitalizeFirstLetter(text2);
-console.log("text2 được in hoa chữ cái đầu: "+capitalizedText);
+console.log("text2 được in hoa chữ cái đầu: "+capitalizedText);*/
+
+
+//33. Calculate the sum of numbers received in a comma delimited string
+function sumFromCommaDelimitedString(str) {
+    return str
+        .split(',')     // Tách chuỗi thành mảng các phần tử dựa trên dấu phẩy
+        .map(Number)    // Chuyển đổi từng phần tử thành số
+        .reduce((sum, num) => sum + num, 0); // Tính tổng các số trong mảng
+}
+
+// Ví dụ sử dụng:
+const numbers = "3,4,5,6,7";
+const sum = sumFromCommaDelimitedString(numbers);
+console.log(`Coding Challenge 33:`)
+console.log(`Chuỗi: `, numbers);
+console.log(`Tổng các số: ${sum}`);
+console.log(`-------------------------`)
+
+//34. Create a function that returns an array with words inside a text.
+function getWords(text) {
+    return text.trim().split(/\s+/);
+}
+
+// Ví dụ sử dụng:
+const text = "Huỳnh Hồ Nhựt Hào";
+const words = getWords(text);
+console.log(`Coding Challenge 34:`)
+console.log("Văn bản: " + text)
+console.log("Từ trong văn bản: " + words); 
+
