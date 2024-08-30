@@ -39,7 +39,7 @@ console.log("Tổng của 100 số nguyên tố đầu tiên:", result.sum);*/
 
 
 //29.  Print the distance between the first 100 prime numbers
-function isPrime(num) {
+/*function isPrime(num) {
     if (num <= 1) return false;
     if (num === 2) return true;
     if (num % 2 === 0) return false;
@@ -70,4 +70,40 @@ function calculatePrimeDistances() {
 }
 
 // Gọi hàm để tính toán và in ra khoảng cách
-calculatePrimeDistances();
+calculatePrimeDistances();*/
+
+
+//30.  Create a function that will add two positive numbers of indefinite size. The numbers
+function addLargeNumbers(num1, num2) {
+    // Đảm bảo rằng cả hai số đều là chuỗi
+    num1 = num1.toString();
+    num2 = num2.toString();
+
+    let carry = 0; // Biến nhớ khi tổng vượt quá 9
+    let result = []; // Mảng để lưu trữ kết quả của từng bước cộng
+    let i = num1.length - 1;
+    let j = num2.length - 1;
+
+    // Vòng lặp qua từng chữ số từ phải qua trái
+    while (i >= 0 || j >= 0 || carry > 0) {
+        const digit1 = i >= 0 ? parseInt(num1[i], 10) : 0;
+        const digit2 = j >= 0 ? parseInt(num2[j], 10) : 0;
+
+        const sum = digit1 + digit2 + carry;
+        carry = Math.floor(sum / 10); // Tính toán biến nhớ
+        result.unshift(sum % 10); // Thêm chữ số vào đầu mảng kết quả
+
+        i--;
+        j--;
+    }
+
+    // Chuyển đổi mảng kết quả thành chuỗi
+    return result.join('');
+}
+
+// Ví dụ sử dụng:
+const num1 = "123456789123456789";
+const num2 = "987654321987654321";
+const sum = addLargeNumbers(num1, num2);
+console.log(`Kết quả cộng: ${sum}`);
+
