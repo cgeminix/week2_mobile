@@ -73,8 +73,9 @@ function calculatePrimeDistances() {
 calculatePrimeDistances();*/
 
 
-//30.  Create a function that will add two positive numbers of indefinite size. The numbers
-function addLargeNumbers(num1, num2) {
+//30. Create a function that will add two positive numbers of indefinite size. The numbers
+//are received as strings and the result should be also provided as string.
+/*function addLargeNumbers(num1, num2) {
     // Đảm bảo rằng cả hai số đều là chuỗi
     num1 = num1.toString();
     num2 = num2.toString();
@@ -105,5 +106,34 @@ function addLargeNumbers(num1, num2) {
 const num1 = "123456789123456789";
 const num2 = "987654321987654321";
 const sum = addLargeNumbers(num1, num2);
-console.log(`Kết quả cộng: ${sum}`);
+console.log(`Kết quả cộng: ${sum}`);*/
 
+
+//31. Create a function that will return the number of words in a text
+function countWords(text) {
+    // Loại bỏ khoảng trắng ở đầu và cuối, sau đó tách từ bằng khoảng trắng
+    const words = text.trim().split(/\s+/);
+    // Trả về số lượng từ
+    return words.length;
+}
+
+// Ví dụ sử dụng:
+const text = "Huỳnh Hồ Nhựt Hào, 20067811.";
+const wordCount = countWords(text);
+console.log(`Số lượng từ của text: ${wordCount}`);
+
+//32. Create a function that will capitalize the first letter of each word in a text
+function capitalizeFirstLetter(text) {
+    return text
+        .split(' ')               // Tách chuỗi thành mảng các từ bằng khoảng trắng
+        .map(word => {
+            return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase(); 
+            // Viết hoa chữ cái đầu của từ và nối với phần còn lại của từ
+        })
+        .join(' ');               // Kết hợp các từ lại thành chuỗi
+}
+
+// Ví dụ sử dụng:
+const text2 = "huỳnh hồ nhựt hào";
+const capitalizedText = capitalizeFirstLetter(text2);
+console.log("text2 được in hoa chữ cái đầu: "+capitalizedText);
